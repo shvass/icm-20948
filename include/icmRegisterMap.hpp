@@ -7,6 +7,7 @@
 
 // Generalized
 #define    REG_BANK_SEL                        0x7F
+#define    DEVICE_ID                           0xea
 
 // Gyroscope and Accelerometer
 // User Bank 0
@@ -156,10 +157,10 @@
 #define    M_REG_TS2                           0x34
 
 // Bank switching sequences
-#define    SET_BANK_0_WRITE   {REG_BANK_SEL, 0x00}
-#define    SET_BANK_1_WRITE   {REG_BANK_SEL, 0x10}
-#define    SET_BANK_2_WRITE   {REG_BANK_SEL, 0x20}
-#define    SET_BANK_3_WRITE   {REG_BANK_SEL, 0x30}
+#define    REG_BANK_0   0x00
+#define    REG_BANK_1   0x01
+#define    REG_BANK_2   0x02
+#define    REG_BANK_3   0x03
 
 #define ICM_READ_MASK  0x80
 #define ICM_WRITE_MASK 0x7F
