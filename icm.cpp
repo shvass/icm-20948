@@ -28,7 +28,7 @@ float icm::m_gyroSens[4] = {
 };
 
 
-icm::icm(gpio_num_t MISO, gpio_num_t MOSI, gpio_num_t CLK , spi_host_device_t devId){
+icm::icm(gpio_num_t MISO, gpio_num_t MOSI, gpio_num_t CLK, gpio_num_t CS , spi_host_device_t devId){
 
     // initialize SPI bus
     esp_err_t ret;
@@ -61,7 +61,7 @@ icm::icm(gpio_num_t MISO, gpio_num_t MOSI, gpio_num_t CLK , spi_host_device_t de
         .cs_ena_posttrans = 8,
         .clock_speed_hz = ICM_SPI_CLK_FREQ, 
         .input_delay_ns = 59,
-        .spics_io_num =  ICM_CS_DEFAULT,
+        .spics_io_num =  CS,
         .flags = 0,
         .queue_size = 7,
         .pre_cb = 0,

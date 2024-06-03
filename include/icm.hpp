@@ -10,10 +10,7 @@
 #define ICM_SPI_CLK_FREQ  (7 * 1000 * 1000)
 
 #define ICM_SPI_ID SPI3_HOST 
-#define ICM_CLK_DEFAULT GPIO_NUM_25
-#define ICM_CS_DEFAULT GPIO_NUM_26
-#define ICM_MISO_DEFAULT GPIO_NUM_33
-#define ICM_MOSI_DEFAULT GPIO_NUM_32
+
 
 #define ICM_RX_BUF_SIZE 130
 
@@ -34,7 +31,7 @@ public:
     
 
     
-    icm(gpio_num_t MISO = ICM_MISO_DEFAULT, gpio_num_t MOSI = ICM_MOSI_DEFAULT, gpio_num_t CLK = ICM_CLK_DEFAULT, spi_host_device_t devId = ICM_SPI_ID);
+    icm(gpio_num_t MISO, gpio_num_t MOSI, gpio_num_t CLK, gpio_num_t CS, spi_host_device_t devId = ICM_SPI_ID);
 
 
     void update();
